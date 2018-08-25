@@ -23,6 +23,6 @@ services:
       context: ./nginx
     image: nginx
     ports:
-      - 88:80
+      - 80:80
     links:
       - web
