@@ -1,0 +1,11 @@
+- hosts: host1
+
+  tasks:
+    - name: copy docker config and project files
+      copy: src=proj dest=~
+
+    - name: deploying containers
+      command: chdir=~/proj docker-compose up -d --build --scale proxy=1 --scale web="{{ WORKERS }}" --scale db=1
+      register: out
+
+    - debug: var=out.stdout_lines

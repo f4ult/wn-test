@@ -1,0 +1,5 @@
+- hosts: host1
+
+  tasks:
+    - name: stoping containers
+      shell: docker stop $(docker ps -aq); docker rm $(docker ps -aq)

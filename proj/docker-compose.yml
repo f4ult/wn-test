@@ -1,0 +1,28 @@
+version: '3.1'
+
+services:
+
+  db:
+    build:
+      context: ./mariadb
+    env_file:
+      - db-credentials.env
+
+  web:
+    build:
+      context: ./apache
+    env_file:
+      - db-credentials.env
+    environment:
+      MYSQL_ROOT_PASSWORD: ""
+    links:
+      - db
+
+  proxy:
+    build:
+      context: ./nginx
+    image: nginx
+    ports:
+      - 88:80
+    links:
+      - web
