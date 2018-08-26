@@ -15,7 +15,8 @@
 1. ```git clone https://github.com/f4ult/wn-test```
 2. указать ip и учетную запись **сервера\#2** в файле *ansible-hosts*
 3. ```make
-make install```
+make install
+```
 
 
 
