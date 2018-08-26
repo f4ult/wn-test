@@ -11,10 +11,11 @@
 
 ## использование
 
-1. на *сервере\#1*:  
-	git clone https://github.com/f4ult/wn-test   
+1. на **сервере\#1**:   
+```git clone https://github.com/f4ult/wn-test```   
 указать ip и учетную запись **сервера\#2** в файле *ansible-hosts*
-2.	make
+2. ```make```
+3. ```make install```
 
 
 
