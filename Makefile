@@ -14,7 +14,8 @@ $(BACKEND_HOSTS_FILE):
 	@echo "make clean && make install WORKERS=X"
 	@echo "Для продолжения в конфигурации по-умолчанию введите: "
 	@echo "make install  - для запуска процесса деплоя"
-	@echo "make clean    - для остановки и удаления контейнеров на удаленном хосте"
+	@echo "make clean    - для остановки и удаления контейнеров на удаленном хосте. Также нужно применять перед"
+	@echo "                изменением количества экземпляров масштабируемого контейнера"
 
 install: $(BACKEND_HOSTS_FILE)
 	ansible-playbook -i ansible-hosts ansible-playbook.yml --extra-vars "WORKERS=$(WORKERS)"
